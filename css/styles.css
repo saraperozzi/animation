@@ -132,7 +132,7 @@ a{
   border-radius: 15px;
 }
 
-.filter p {
+.p_button {
   color: #48b1bf;
   width: 100%;
   text-align: center;
@@ -145,5 +145,4 @@ a{
 
 .p_selected{
   color: white;
-  font-size: 50px;
 }

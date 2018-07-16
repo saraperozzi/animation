@@ -19,9 +19,9 @@
   <div class="filtered-content">
     <div class="filter-container">
         <div class="filter" id="All">
-            <p>
+            <p class="p_button">
               All
-              </p>
+            </p>
           </div>
     </div>
     <div class="container">
@@ -36,6 +36,16 @@
   
   var container = document.querySelector(".container");
   var link = [
+    {name:"Ciccio", description:"website reference for flex", img:"../img/peroz.png", tags:"Tag2", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {name:"Ciccio", description:"website reference for flex", img:"../img/peroz.png", tags:"Tag2", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {name:"Pippo", description:"website reference for flex", img:"../img/peroz.png", tags:"Tag3", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {name:"Flex", description:"website reference for flex", img:"../img/peroz.png", tags:"Tag1", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {name:"Ciccio", description:"website reference for flex", img:"../img/peroz.png", tags:"Tag2", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {name:"Ciccio", description:"website reference for flex", img:"../img/peroz.png", tags:"Tag2", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {name:"Ciccio", description:"website reference for flex", img:"../img/peroz.png", tags:"Tag2", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {name:"Pippo", description:"website reference for flex", img:"../img/peroz.png", tags:"Tag3", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {name:"Flex", description:"website reference for flex", img:"../img/peroz.png", tags:"Tag1", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {name:"Ciccio", description:"website reference for flex", img:"../img/peroz.png", tags:"Tag2", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
     {name:"Ciccio", description:"website reference for flex", img:"../img/peroz.png", tags:"Tag2", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
     {name:"Ciccio", description:"website reference for flex", img:"../img/peroz.png", tags:"Tag2", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
     {name:"Pippo", description:"website reference for flex", img:"../img/peroz.png", tags:"Tag3", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
@@ -92,7 +102,7 @@
     var tag_div = filter_container.appendChild(newTag);
     var p = document.createElement("p");
     var text = document.createTextNode(tags_no_duplicates[i]);
-    
+    p.classList.add('p_button');
 
     // //create and append new elements for each one of the tag element
     newTag.classList.add('filter');
@@ -106,20 +116,25 @@
   
   filter.addEventListener('click',function(event){
     var selected_filter = event.target.id;
+    
     var selected_class = event.target.classList;
-    var p_filter = event.target.children;
-    console.log(p_filter[0].classList.length)
-
-
+    var p_filter = document.querySelectorAll('.p_button');
+    console.log(p_filter)
+    for (i=0; i<p_filter.length;i++){
+      p_filter[i].classList.remove('p_selected');
+    }
+    
     for (i=0; i<filter_button.length; i++){
-      filter_button[i].classList.remove('selected-filter');
+      filter_button[i].classList.remove('selected-filter'); 
       // p_filter[i].classList.remove('p_selected');
     }
+
+       event.target.children[0].classList.add('p_selected');
+    
     
       for (i=0; i<selected_class.length; i++){
       if (selected_class[i] !== 'filter-container'){
         event.target.classList.add('selected-filter');
-        // p_filter[i].classList.add('p_selected');
       }
       
      }
