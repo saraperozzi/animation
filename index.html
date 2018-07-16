@@ -113,19 +113,12 @@
 
     for (i=0; i<filter_button.length; i++){
       filter_button[i].classList.remove('selected-filter');
-      for (i=0; i<=p_filter[0].classList.length;i++){
-        p_filter[i].classList.remove('p_selected');
-      }
       // p_filter[i].classList.remove('p_selected');
     }
     
       for (i=0; i<selected_class.length; i++){
       if (selected_class[i] !== 'filter-container'){
         event.target.classList.add('selected-filter');
-        for (i=0; i<=p_filter[0].classList.length;i++){
-        p_filter[i].classList.add('p_selected');
-      }
-
         // p_filter[i].classList.add('p_selected');
       }
       
