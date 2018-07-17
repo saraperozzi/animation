@@ -26,6 +26,10 @@ p{
   font-size: 1em;
   line-height: 2em;
 }
+.description{
+  font-size: 21px;
+  line-height: 32px;
+}
 
 a{
   text-decoration: none;
@@ -67,33 +71,38 @@ a{
   display:flex;
   width: 200px;
   margin: .5%;
-  box-shadow: 2px 2px 5px #ccc;
+  box-shadow: 2px 2px 5px #fff;
   border: 0px;
-  background-image: url("../img/peroz.png");
+  /* background-image: url("../img/peroz.png"); */
   background-repeat: no-repeat;
   background-size: 100%;
   transition: all 1s;
-  opacity: 1;
+  opacity: .5;
 }
 
-.button:hover{
-  opacity: .7;
+.button:hover .container > .button{
+  opacity: .5;
+  
 }
 
 .button-content{
+  position: absolute;
   text-align: center;
   width: 80%;
   height: auto;
-  bottom:40%;
+  bottom:auto;
   left: 10%;
-  position: absolute;
-  opacity: 0;
+  /* opacity: .1; */
   transition: all 1s;
   color: #000;
+  font-weight: lighter;
+  font-size: 21px;
+  line-height: 26px;
 }
 
-.button:hover .button-content{
+.button:hover{
   opacity: 1;
+  box-shadow: 2px 2px 5px #ccc;
 }
 
 .hide{
