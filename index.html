@@ -5,161 +5,353 @@
   <title>Web reference</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="Peroz">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,700" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
 </head>
 
 <body>
   <div class="intro">
     <div class="content">
-      <h1>My web reference repository</h1>
-      <p class="description">This repository was created to improve my javascript coding skill and to create a repository in which I could save interesting references related to visual, ux, ui and data visualization design.</p>
+      <h1 class="title">My web ref.</h1>
+      <h1><a class="chapter" id="books">Books.</a></h1>
+      <h1><a class="chapter" id="websites">Websites.</a></h1>
+      <h1><a class="chapter" id="videos">Videos.</a></h1>
+      <!-- <p class="description">This repository was created to improve my javascript coding skill and to create a repository in which I could save interesting references related to visual, ux, ui and data visualization design.</p> -->
     </div>
   </div>
   <div class="filtered-content">
-    <div class="filter-container">
-        <div class="filter" id="All">
-            <p class="p_button">
-              All
-            </p>
-          </div>
-    </div>
     <div class="container">
+      <h1 class="chapter_title" id="books_chapter">Books.</h1>
+      <div class="book-filter-container">
+          <div class="book-filter" id="All">
+              <p class="p_button">
+                All
+              </p>
+            </div>
+      </div>
+      <div class="books_container">
+      </div>
     </div>
+
+    <div class="container">
+        <h1 class="chapter_title" id="websites_chapter">Website.</h1>
+        <div class="website-filter-container">
+            <div class="website-filter" id="All">
+                <p class="p_button_websites">
+                  All
+                </p>
+              </div>
+        </div>
+        <div class="websites_container">
+        </div>
+      </div>
   </div>
 
   
 
-  <script type="text/javascript">
-  
-  
-  
-  var container = document.querySelector(".container");
-  var link = [
-    {name:"D. Norman - La caffettiera del Masochista", description:"website reference for flex", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"UX Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
-    {name:"J. Maeda - The laws of simplicity", description:"website reference for flex", img:"img/john-maeda_the-laws-of-simplicity.png", tags:"Design", href:"http://lawsofsimplicity.com/"},
-    {name:"Pippo", description:"website reference for flex", img:"img/john-maeda_the-laws-of-simplicity.png", tags:"DataViz", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
-    {name:"Flex", description:"website reference for flex", img:"img/peroz.png", tags:"UX Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
-    {name:"Ciccio", description:"website reference for flex", img:"img/peroz.png", tags:"Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
-    {name:"Ciccio", description:"website reference for flex", img:"img/peroz.png", tags:"Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
-    {name:"Ciccio", description:"website reference for flex", img:"img/peroz.png", tags:"Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
-    {name:"Pippo", description:"website reference for flex", img:"img/peroz.png", tags:"DataViz", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
-    {name:"Flex", description:"website reference for flex", img:"img/peroz.png", tags:"UX Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
-    {name:"Ciccio", description:"website reference for flex", img:"img/peroz.png", tags:"Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
-    {name:"Ciccio", description:"website reference for flex", img:"img/peroz.png", tags:"Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
-    {name:"Ciccio", description:"website reference for flex", img:"img/peroz.png", tags:"Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
-    {name:"Pippo", description:"website reference for flex", img:"img/peroz.png", tags:"DataViz", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
-    {name:"Flex", description:"website reference for flex", img:"img/peroz.png", tags:"UX Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
-    {name:"Ciccio", description:"website reference for flex", img:"img/peroz.png", tags:"Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
-    {name:"Pippo", description:"website reference for flex", img:"img/peroz.png", tags:"DataViz", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"}
+<script type="text/javascript">
+
+  var container = document.querySelector(".books_container");
+  var website_container = document.querySelector(".websites_container")
+  var book = [
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"UX Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"Data Viz", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"UI Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"UX Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"HDC Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"CDC Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"New Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"New Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"UX Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"Data Viz", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"UI Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"UX Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"HDC Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"CDC Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"New Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"New Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"UX Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"Data Viz", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"UI Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"UX Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"HDC Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"CDC Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"New Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"New Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {book_author:"D. Norman", book_title:"La caffettiera del masochista", img:"img/donald-norman_la-caffettiera-del-masochista.png", tags:"Bla Design", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"}
   ]
 
-  //cycle that create an element for every 'link' json line
-  for (i=0 ; i<link.length ; i++){
-    //variables
-    var newElement = document.createElement("div");
-    var newText = document.createElement("p");
-    var div = container.appendChild(newElement);
-    var text = document.createTextNode(link[i].name);
-    //create and append new elements for each one of the object "link" element
-    newElement.dataset.tag = link[i].tags;
-    newElement.dataset.href = link[i].href;
-    newText.classList.add("button-content");
-    newElement.classList.add("button");
-    newElement.style.backgroundImage = 'url("'+link[i].img+'")';
-    newElement.style.backgroundRepeat = 'no-repeat';
-    newElement.style.backgroundSize = '100%';
-    console.log(link[i].img)
-    div.appendChild(newText).appendChild(text);
-    }
+  // websites
+  var websites = [
+    {website_title:"Flexbox", img:"Flexbox.png", tags:"Reference", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {website_title:"Flexbox", img:"Flexbox.png", tags:"Tool", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {website_title:"Flexbox", img:"Flexbox.png", tags:"Utili", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {website_title:"Flexbox", img:"Flexbox.png", tags:"UI", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {website_title:"Flexbox", img:"Flexbox.png", tags:"UX", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {website_title:"Flexbox", img:"Flexbox.png", tags:"HDC", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {website_title:"Flexbox", img:"Flexbox.png", tags:"CDC", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {website_title:"Flexbox", img:"Flexbox.png", tags:"ciccio", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+    {website_title:"Flexbox", img:"Flexbox.png", tags:"ciccio", href:"https://css-tricks.com/snippets/css/a-guide-to-flexbox/"}
+  ];
 
-    // Calculates height for boxes
+  // function - create an element given the element type and class you need
+  var createNewElement = function(element_type,element_class){
+    let element_name = document.createElement(element_type);
+    element_name.classList.add(element_class);
+    return element_name;
+  }
+
+  // *** cycle that create an element for every 'book' json line ***
+  ;for (i=0 ; i<book.length ; i++){
+    //Create div for book img
+    var book_img = createNewElement("div","book-image");
+    
+    //Create div + textNode for book author
+    var book_author = createNewElement('p','book-author');
+    var book_author_text = document.createTextNode(book[i].book_author);
+    
+    //Create div + textNode for book title
+    var book_title = createNewElement("h5","book-title");
+    var book_title_text = document.createTextNode(book[i].book_title);
+    
+    // Create button for every json line
+    var button = createNewElement('div','button');
+    button.dataset.tag = book[i].tags;
+    button.dataset.href = book[i].href;
+    
+    //append button div inside container and then append book img + book author + book title inside that div
+    var div = container.appendChild(button);
+    div.appendChild(book_img);
+    div.appendChild(book_author).appendChild(book_author_text);
+    div.appendChild(book_title).appendChild(book_title_text);
+  }
+  // *** end of books cycle ***
+
+  // *** cycle that create an element for every 'website' json line ***
+  for (i=0 ; i<websites.length ; i++){
+   //Create div for website img
+   var website_img = createNewElement("div","website-image");
+   
+   //Create div + textNode for website title
+   var website_title = createNewElement("h5","website-title");
+   var website_title_text = document.createTextNode(websites[i].website_title);
+   
+   // Create button for every json line
+   var website_button = createNewElement('div','websites-button');
+   website_button.dataset.tag = websites[i].tags;
+   website_button.dataset.href = websites[i].href;
+   
+   //append button div inside container and then append book img + book author + book title inside that div
+   var div_web = website_container.appendChild(website_button);
+   div_web.appendChild(website_img);
+   div_web.appendChild(website_title).appendChild(website_title_text);
+  }
+  // *** end of cycle ***
+
+  // Calculates height for boxes || may be valid for all json
   var elements = document.querySelectorAll('.button');
-  for (i=0; i<elements.length; i++){
-    var w = elements[i].clientWidth;
-    elements[i].style.height = w; 
+  var websites_elements = document.querySelectorAll('.websites-button');
+  // console.log(elements);
+  // console.log(websites_elements)
+  
+  var BoxesHeight = function(myDataArray){
+    for (i=0; i<myDataArray.length; i++){
+      var w = myDataArray[i].clientWidth;
+      myDataArray[i].style.height = w;
+    };
+  }; 
+  
+  BoxesHeight(elements);
+  BoxesHeight(websites_elements);
+  
+
+  // Create an array of all tags
+  // var filters = [];
+  // var websites_filter = [];
+  var CreateFilter = function(myDataArray){
+    let filters_temp = [];
+    for (i=0; i<myDataArray.length; i++){
+      filters_temp[i] = myDataArray[i].dataset.tag;
+    };
+    return filters_temp;
   };
 
-  // Create a no-duplicates array of all tags
-  var filters = [];
-  for (i=0; i<elements.length; i++){
-    filters[i] = elements[i].dataset.tag;
+  var filters = CreateFilter(elements);
+  var websites_filter = CreateFilter(websites_elements)
+ 
+  // Create an array with no-duplicates of all tags
+  
+  var CreateArrayNoDuplicates = function(MyArrayWithDuplicates){
+    let tags_no_duplicates = []
+    for (i=0; i<MyArrayWithDuplicates.length; i++){
+      if (tags_no_duplicates.indexOf(MyArrayWithDuplicates[i]) == -1){
+        tags_no_duplicates.push (MyArrayWithDuplicates[i]);
+      };
+    };
+    return tags_no_duplicates;
+  };
+  var tags_no_duplicates = CreateArrayNoDuplicates(filters);
+  var website_tags_no_duplicates = CreateArrayNoDuplicates(websites_filter);
+
+  var openLink = function(evt){
+    window.open(evt.target.dataset.href);
   }
+  // container.addEventListener('click', function(event){
+  //   window.open(event.target.dataset.href)
+  // });
+  container.addEventListener('click',openLink)
+  website_container.addEventListener('click',openLink);
   
-    var tags_no_duplicates = []
-    for (i=0; i<filters.length; i++){
-      if (tags_no_duplicates.indexOf(filters[i]) == -1){
-        tags_no_duplicates.push (filters[i]);
-      }
-    }
-
-  //function open link on click on click
-  container.addEventListener('click',function(event){
-    var target = event.target;
-    window.open(target.dataset.href);
-  });
-  
-  //Create filter div starting from no-duplicate array of tags
-    for (i=0; i<tags_no_duplicates.length; i++){
-    var filter_container = document.querySelector('.filter-container');
-    var newTag = document.createElement("div");
-    var tag_div = filter_container.appendChild(newTag);
-    var p = document.createElement("p");
-    var text = document.createTextNode(tags_no_duplicates[i]);
-    p.classList.add('p_button');
-
-    // //create and append new elements for each one of the tag element
-    newTag.classList.add('filter');
-    newTag.setAttribute('id',tags_no_duplicates[i])
-    tag_div.appendChild(p).appendChild(text);
-   }
-
-   //filters
-  var filter = document.querySelector('.filter-container');
-  var filter_button = document.querySelectorAll('.filter');
-  
-  filter.addEventListener('click',function(event){
-    var selected_filter = event.target.id;
+  // *** Create filters starting from no-duplicate array of tags ***
+  for (i=0; i<tags_no_duplicates.length; i++){
     
-    var selected_class = event.target.classList;
+    //Select .book-filter-container
+    var filter = document.querySelector('.book-filter-container');
+
+    // Create new div element with given class and id from array tags_no_duplicates
+    var newTag = createNewElement('div','book-filter');
+    newTag.setAttribute('id',tags_no_duplicates[i]);
+    
+    //Create element p + text node from array tags_no_duplicates
+    var p_filter = createNewElement('p','p_button');
+    var filter_text = document.createTextNode(tags_no_duplicates[i]);
+    
+    //Append div > paragraph > textnode
+    var tag_div = filter.appendChild(newTag);
+    tag_div.appendChild(p_filter).appendChild(filter_text);
+   };
+   // *** end of cycle ***
+
+  //  //function open link on click
+  // container.addEventListener('click',function(event){
+  //   window.open(event.target.dataset.href);
+  // });
+  
+  // *** Create filters starting from no-duplicate array of tags ***
+  for (i=0; i<tags_no_duplicates.length; i++){
+    
+    //Select .book-filter-container
+    var websites_filter = document.querySelector('.website-filter-container');
+    
+    // Create new div element with given class and id from array tags_no_duplicates
+    var newWebsiteTag = createNewElement('div','website-filter');
+    newWebsiteTag.setAttribute('id',website_tags_no_duplicates[i]);
+    
+    //Create element p + text node from array tags_no_duplicates
+    var website_p_filter = createNewElement('p','p_button_websites');
+    var website_filter_text = document.createTextNode(website_tags_no_duplicates[i]);
+    
+    //Append div > paragraph > textnode
+    var tag_div = websites_filter.appendChild(newWebsiteTag);
+    tag_div.appendChild(website_p_filter).appendChild(website_filter_text);
+   };
+   // *** end of cycle ***
+
+
+  // *** Filtering ***
+  
+  // Select all filter button
+  var filter_button = document.querySelectorAll('.book-filter');
+  var filter_button_websites = document.querySelectorAll('.website-filter');
+
+  var filteringFunction = function(evt){
+
+    //create variable for evt target id and classlist
+    var selected_filter = evt.target.id;
+    var selected_class = evt.target.classList;
+    // console.log(selected_filter);
+    // console.log(selected_class[0]);
+
+    //Create array of all buttons
     var p_filter = document.querySelectorAll('.p_button');
-    console.log(p_filter)
-    for (i=0; i<p_filter.length;i++){
-      p_filter[i].classList.remove('p_selected');
-    }
-    
-    for (i=0; i<filter_button.length; i++){
-      filter_button[i].classList.remove('selected-filter'); 
-      // p_filter[i].classList.remove('p_selected');
-    }
+    var p_filter_website = document.querySelectorAll('.p_button_websites');
+    // console.log(p_filter)
 
-       event.target.children[0].classList.add('p_selected');
-    
-    
-      for (i=0; i<selected_class.length; i++){
-      if (selected_class[i] !== 'filter-container'){
-        event.target.classList.add('selected-filter');
+    // Function remove given class from a given array [in this case remove selected text and button from all elements]
+    var removeSelectedClass = function(filter,classToBeRemoved){
+      for (i=0; i<filter.length;i++){
+        filter[i].classList.remove(classToBeRemoved);
       }
-      
-     }
+    };
+    removeSelectedClass(p_filter,'p_selected');
+    removeSelectedClass(filter_button,'selected-filter');
+    removeSelectedClass(p_filter_website,'p_selected');
+    removeSelectedClass(filter_button_websites,'selected-filter');
+
+    // Add class to children of selected tag div to create white text
+    evt.target.children[0].classList.add('p_selected');
+
+    // Add class selected-filter to all button except for the container (because the eventlistener is on the container)
+    var addClassToSelectedFilter = function(containerClass,classToBeAdded){
+      console.log(selected_class)
+      console.log(selected_filter)
+      console.log('CAZZZO '+containerClass);
+      if (selected_class[0] !== containerClass){
+        event.target.classList.add(classToBeAdded);
+      }
+      // for (i=0; i<selected_class.length; i++){
+      //   if (selected_class[i] !== containerClass){
+      //     console.log(selected_class[i]);
+          
+      //     event.target.classList.add(classToBeAdded);
+      //   }; 
+      };
+      if (selected_class[0] == 'website-filter-container'){
+        addClassToSelectedFilter('website-filter-container','selected-filter');
+      }
+      else {
+        addClassToSelectedFilter('book-filter-container','selected-filter');
+      }
+
+    var filterFunction = function(selectedFilter,myButtonArray){
     
-    for(i=0; i<link.length;i++){
-      if ( selected_filter === 'All' || selected_filter === ''){
-        elements[i].classList.remove('show','hide');
-      }
-      
-      else if( selected_filter === elements[i].dataset.tag){
-        elements[i].classList.add('show');
-        elements[i].classList.remove('hide');
-      }
+      if (selected_class[0] == "book-filter"){
+       var arrayLength = book.length;
+      }    
       else{
-        elements[i].classList.add('hide');
-        elements[i].classList.remove('show');
+        var arrayLength = websites.length;
       }
+
+      for(i=0; i<arrayLength;i++){
+      if ( selectedFilter === 'All' || selectedFilter === ''){
+        // console.log(myButtonArray[i].classList);
+        myButtonArray[i].classList.remove('show','hide');
+      }
+      
+      else if( selectedFilter === myButtonArray[i].dataset.tag){
+        myButtonArray[i].classList.add('show');
+        myButtonArray[i].classList.remove('hide');
+      }
+
+      else{
+        myButtonArray[i].classList.add('hide');
+        myButtonArray[i].classList.remove('show');
+      }
+      }
+    };
+    if (selected_class[0] == "book-filter"){
+      filterFunction(selected_filter,elements);
+    }    
+    else{
+      filterFunction(selected_filter,websites_elements);
     }
-  })
+  }
 
+  // *** Begin of filtering event ***
+  filter.addEventListener('click', filteringFunction);
+  websites_filter.addEventListener('click',filteringFunction);
 
+  // Cycle that add event listener on every book, websites and video chapter
+  var chapter_container = document.querySelectorAll('.chapter');
+    for (var i=0; i<chapter_container.length; i++){
+      chapter_container[i].addEventListener('click', function(){
+        document.querySelector('#'+event.target.id +'_chapter').scrollIntoView({ behavior: 'smooth' });
+      }
+    ) 
+    }
 
   </script>
 
